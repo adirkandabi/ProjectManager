@@ -1,0 +1,273 @@
+@import url("https://fonts.googleapis.com/css2?family=Agbalumo&family=Roboto:wght@300;400;500;700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+  background-color: antiquewhite;
+  font-family: "Times New Roman", Times, serif;
+}
+.modal-open {
+  filter: blur(5px);
+  transition: filter 0.3s ease-in-out;
+  overflow: hidden;
+  pointer-events: none;
+  user-select: none;
+}
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+header h1 {
+  font-family: "Agbalumo", sans-serif;
+  font-size: 5rem;
+  margin-bottom: 5rem;
+  text-align: center;
+}
+.no-project {
+  display: grid;
+  place-items: center;
+  margin: 0 auto;
+  position: absolute;
+  top: 400px;
+  right: 300px;
+  width: 50%;
+  height: 30vh;
+}
+.no-project img {
+  width: 100px;
+  height: 100px;
+}
+.no-project h1 {
+  font-size: 30px;
+  font-weight: bold;
+  color: rgb(93, 93, 93);
+}
+.no-project p {
+  font-size: 30px;
+  color: rgb(116, 116, 116);
+}
+
+.projects-container {
+  position: relative;
+  border: black;
+  background-color: black;
+  width: 30%;
+  height: 100vh;
+  padding: 100px 50px 50px;
+  border-radius: 0 19px 0 0;
+  color: white;
+  text-align: center;
+}
+.projects-container h1 {
+  text-align: center;
+  font-size: 2rem;
+}
+.empty-list-message {
+  font-size: 30px;
+  color: rgb(157, 153, 153);
+  margin-top: 50px;
+}
+.new-project,
+.btn-project {
+  font-size: 1.5rem;
+
+  color: aliceblue;
+  border-radius: 10px;
+  padding: 10px;
+  transition: transform 0.2s;
+}
+.new-project:hover,
+.btn-project:hover {
+  transform: scale(1.2);
+}
+.new-project {
+  margin: 40px 0 80px 0;
+  text-align: center;
+  justify-content: center;
+  background-color: rgb(79, 77, 77);
+}
+.btn-project {
+  margin-bottom: 30px;
+}
+.form-container,
+.form-container-invalid {
+  position: absolute;
+  top: 200px;
+  right: 300px;
+  width: 50%;
+  height: auto;
+  padding: 20px;
+  color: rgb(79, 77, 77);
+}
+.form-container-invalid {
+  border: 2px solid #f87171;
+  border-color: #f87171;
+}
+
+.form-container h2,
+.form-container-invalid h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  background-color: rgb(210, 209, 209);
+  margin-bottom: 10px;
+}
+.error-message {
+  font-weight: bold;
+  color: rgb(232, 22, 22);
+}
+.form-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cancel-button,
+.save-button {
+  padding: 10px;
+  background-color: rgb(79, 77, 77);
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+.cancel-button:hover,
+.save-button:hover {
+  background-color: #555;
+}
+.project {
+  place-items: center;
+  margin: 0 auto;
+  top: 200px;
+  left: 800px;
+  position: absolute;
+}
+
+.project-details .delete-project {
+  margin: -60px 0 0 1300px;
+  font-size: 20px;
+  border-radius: 15px;
+  background-color: #000;
+  color: aliceblue;
+  padding: 15px;
+  position: absolute;
+  transition: transform 0.2s;
+}
+.project-details .delete-project:hover {
+  color: rgb(250, 10, 10);
+  transform: scale(1.2);
+}
+.project-details h1 {
+  font-size: 50px;
+  font-weight: bold;
+}
+.project-details.date {
+  font-size: 20px;
+  color: #787878;
+}
+.description {
+  font-size: 30px;
+  color: #000;
+  max-width: 1000px;
+  margin-top: 50px;
+}
+.continuous-line {
+  border: none;
+  height: 2px;
+  background-color: #989898; /* Change the color as needed */
+  width: 50vw;
+  margin-top: 50px;
+}
+.tasks h1 {
+  font-weight: bold;
+  font-size: 45px;
+  margin-top: 40px;
+}
+.input-task {
+  max-width: 500px;
+}
+.input-task::placeholder {
+  color: #555;
+}
+.add-task {
+  padding: 13px;
+  font-size: 20px;
+  font-weight: bolder;
+
+  transition: transform 0.2s;
+}
+.add-task:hover {
+  transform: scale(1.1);
+}
+.task-group {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1000px;
+  padding: 20px;
+  font-size: 30px;
+}
+.clear-task {
+  transition: transform 0.2s;
+}
+.clear-task:hover {
+  color: red;
+  transform: scale(1.2);
+}
+.confirmation-modal {
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(67, 66, 66);
+  padding: 30px;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 600px;
+  filter: none;
+}
+
+.confirmation-modal p {
+  margin-bottom: 20px;
+  color: aliceblue;
+}
+
+.confirmation-modal button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.confirmation-modal button.confirm {
+  background-color: #e74c3c;
+  color: #fff;
+  border-radius: 15px;
+}
+
+.confirmation-modal button.cancel {
+  background-color: #3498db;
+  color: #fff;
+  border-radius: 15px;
+}
