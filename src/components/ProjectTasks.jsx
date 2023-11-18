@@ -24,19 +24,21 @@ export default function ProjectTasks({ addTask, deleteTask, projects, index }) {
       <button className="add-task" onClick={handelAddClick}>
         Add Task
       </button>
-      {projects[index].tasks.length > 0
-        ? projects[index].tasks.map((task, index) => (
-            <div className="task-group" key={index}>
-              <p>{task}</p>
-              <button
-                className="clear-task"
-                onClick={() => handelDeleteTask(index)}
-              >
-                Clear
-              </button>
-            </div>
-          ))
-        : null}
+      {projects[index].tasks.length > 0 ? (
+        projects[index].tasks.map((task, index) => (
+          <div className="task-group" key={index}>
+            <p>{task}</p>
+            <button
+              className="clear-task"
+              onClick={() => handelDeleteTask(index)}
+            >
+              Clear
+            </button>
+          </div>
+        ))
+      ) : (
+        <p className="no-tasks">This project does not have any tasks yet.</p>
+      )}
     </section>
   );
 }
